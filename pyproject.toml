@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "3W Unsupervised Learning"
+version = "0.1.0"
+description = "Project that uses MOMENT pre-trained with 3W dataset for anomaly detection in unlabeled data"
+requires-python = ">=3.10"
+
+dependencies = [
+    # MOMENT
+    "momentfm @ git+https://github.com/moment-timeseries-foundation-model/moment.git@main",
+
+    # 3W Toolkit
+    "ThreeWToolkit @ git+https://github.com/petrobras/3W.git@main"
+]
