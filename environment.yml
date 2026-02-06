@@ -1,0 +1,54 @@
+name: 3W-unsupervised
+
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+
+dependencies:
+  - python=3.11
+  - pip
+  - git
+  - setuptools<75
+  - wheel
+
+  - numpy>=1.26.4
+  - scipy>=1.15.2
+  - pandas>=2.2.3
+  - scikit-learn>=1.6.1
+  - statsmodels>=0.14.5
+  - pyarrow>=20.0.0
+
+  - matplotlib>=3.10.1
+  - seaborn>=0.13.2
+  - plotly>=6.0.0
+  - pillow>=11.0.0
+  - scikit-image>=0.25.2
+
+  - pytorch>=2.1
+  - pytorch-cuda=12.1
+  - torchvision>=0.16
+  - torchmetrics>=1.6.2
+  - timm>=1.0.15
+  - imbalanced-learn>=0.13.0
+
+  - pydantic>=2.11
+  - pywavelets>=1.8.0
+  - pylatex>=1.4.2
+  - requests<=2.35.5
+  - tqdm>=4.67.1
+
+  - transformers>=4.40
+  - tokenizers
+  - safetensors
+
+  - pip:
+      # Jupyter
+      - jupyter-client==8.6.3
+      - jupyter-core==5.8.1
+      - ipykernel>=6.29.5
+      - ipywidgets==8.1.7
+
+      # Projetos
+      # - -e ../3W --no-deps
+      # - momentfm @ git+https://github.com/moment-timeseries-foundation-model/moment.git@main --no-deps
