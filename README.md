@@ -47,7 +47,7 @@ projects/
 ```bash
 cd projects
 
-git clone https://github.com/petrobras/3W.git
+git clone --branch v.1.62.0 --single-branch https://github.com/petrobras/3W.git
 
 git clone <THIS_REPOSITORY_URL>
 ```
