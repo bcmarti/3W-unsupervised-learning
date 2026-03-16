@@ -1,0 +1,32 @@
+name: moment-3w
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+
+dependencies:
+  # Python — required by momentfm
+  - python=3.11
+
+  # PyTorch — install via conda for proper CUDA linking
+  # Change cpuonly to pytorch-cuda=12.1 if you have a GPU
+  - pytorch>=2.2
+  - torchvision
+  - pytorch-cuda=12.1
+
+  # Core scientific stack
+  - numpy>=1.26.0
+  - pandas>=2.0
+  - pyarrow>=14.0            # for reading 3W parquet files
+  - scikit-learn>=1.3
+  - matplotlib>=3.7
+
+  # Pip-only packages
+  - pip
+  - pip:
+      - momentfm==0.1.4      # MOMENT foundation model
+      - huggingface-hub>=0.22 # model weights download
+      - transformers==4.33.3   # required by momentfm internals
+      - einops>=0.7           # tensor ops used by MOMENT
+      - accelerate>=0.27     # optional but speeds up training
