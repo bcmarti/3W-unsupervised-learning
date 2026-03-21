@@ -207,10 +207,19 @@ class WindowDataset(Dataset):
 def build_model():
     print("Loading MOMENT-1-large in reconstruction mode...")
     model = MOMENTPipeline.from_pretrained(
-        "AutonLab/MOMENT-1-small",
+        "AutonLab/MOMENT-1-large",
         model_kwargs={"task_name": "reconstruction"},
     )
     model.init()
+
+    # model.init() leaves the backbone frozen by default, which breaks
+    # gradient checkpointing (produces 'Gradients will be None' warning).
+    # Explicitly unfreeze everything so gradients flow during fine-tuning.
+    for param in model.parameters():
+        param.requires_grad = True
+
+    trainable = sum(p.numel() for p in model.parameters() if p.requires_grad)
+    print(f"  Trainable parameters: {trainable:,}")
     return model.to(DEVICE)
 
 
