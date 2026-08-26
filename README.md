@@ -1,4 +1,4 @@
-# 3W-unsupervised-learning
+# unsupervised-learning
 
 This project sets up a **reproducible Conda environment** for running unsupervised learning experiments using:
 
